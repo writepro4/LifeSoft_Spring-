@@ -17,12 +17,12 @@
 		<th>메모</th>
 		<th>날짜</th>
 	</tr>
-<c:forEach var="row" items="${list}">
+<c:forEach var="row" items="${list}"> <!--  forEach로 반복해서 돌리고  -->
 <tr>
 	<td>${row.idx}</td>
 	<td>${row.writer}</td>
 	<td>${row.memo}</td>
-	<td><fmt:formatDate value="${row.post_date}"
+	<td><fmt:formatDate value="${row.post_date}" 
 			pattern="yyyy-mm-dd HH:mm:ss" /></td>
 	</tr>
 </c:forEach>
