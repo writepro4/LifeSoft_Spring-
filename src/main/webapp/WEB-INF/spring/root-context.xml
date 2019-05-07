@@ -13,7 +13,7 @@
 		<!-- 연결문자열에 log4jdbc가 추가됨 -->
 		<property name="url"
 			value="jdbc:log4jdbc:oracle:thin:@localhost:1521/xe" />
-		<property name="username" value="spring" />
+		<property name="username" value="spring1" /> 
 		<property name="password" value="1234" />
 	</bean>
 	<!-- 아파치 DBCP 설정 -->
@@ -33,6 +33,9 @@
 		destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
+	
+	<!-- mybatis mapper interface been을 자동으로 검색하여 생성함 -->
+		<mybatis-spring:scan base-package="com.example.spring02.model.memo"/>
 
 </beans>
 
