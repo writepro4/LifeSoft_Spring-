@@ -18,5 +18,8 @@ public interface MemoDAO {
 			+ ",#{writer},#{memo} )")
 	public void insert(@Param("writer") String writer,
 			@Param("memo") String memo);
+	
+	@Select("select * from memo where idx=#{idx}")
+	public MemoDTO memo_view(@Param("idx") int idx);
 
 }

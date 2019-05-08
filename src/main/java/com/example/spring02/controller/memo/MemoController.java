@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,13 +29,31 @@ public class MemoController {
 		
 	}
 	
+	
 	@RequestMapping("insert.do")
 	public String insert(@ModelAttribute MemoDTO dto) {
 		memoService.insert(dto.getWriter(), dto.getMemo());
 		return "redirect:/memo/list.do";
 	}
 
+	//http://localhost/spring02/memo/view/6 => @PathVariable
+	@RequestMapping("view/{idx}") // 게시물 번호 
+	public ModelAndView view(@PathVariable int idx, ModelAndView mav ) {
+		mav.setViewName("memo/view"); // 출력 페이지 지정
+		mav.addObject("dto", memoService.memo_view(idx)); //데이터 저장
+		return mav; // 출력 페이지로 이동
+	}
+	
 }
+
+
+
+
+
+
+
+
+
 
 
 

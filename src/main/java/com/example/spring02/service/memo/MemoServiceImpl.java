@@ -13,7 +13,7 @@ import com.example.spring02.model.memo.dto.MemoDTO;
 public class MemoServiceImpl implements MemoService {
 
 	@Inject
-	MemoDAO memoDao;
+	MemoDAO memoDao; // 스프링에서 생성한 dao 객체가 연결됨
 	
 	@Override
 	public List<MemoDTO> list() {
@@ -33,8 +33,7 @@ public class MemoServiceImpl implements MemoService {
 
 	@Override
 	public MemoDTO memo_view(int idx) {
-		// TODO Auto-generated method stub
-		return null;
+		return memoDao.memo_view(idx);
 	}
 
 	@Override
