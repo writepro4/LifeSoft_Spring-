@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,5 +27,17 @@ public class MemoController {
 		return mav; //페이지로 이동
 		
 	}
+	
+	@RequestMapping("insert.do")
+	public String insert(@ModelAttribute MemoDTO dto) {
+		memoService.insert(dto.getWriter(), dto.getMemo());
+		return "redirect:/memo/list.do";
+	}
 
 }
+
+
+
+
+
+
