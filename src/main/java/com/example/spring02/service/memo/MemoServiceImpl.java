@@ -19,7 +19,7 @@ public class MemoServiceImpl implements MemoService {
 	public List<MemoDTO> list() {
 		return memoDao.list();
 	}
-
+ 
 	@Override
 	public void insert(MemoDTO dto) {
 		// TODO Auto-generated method stub
@@ -38,13 +38,13 @@ public class MemoServiceImpl implements MemoService {
 
 	@Override
 	public void update(MemoDTO dto) {
-		// TODO Auto-generated method stub
+		memoDao.memo_update(dto);
 
 	}
 
 	@Override
 	public void delete(int idx) {
-		// TODO Auto-generated method stub
+		memoDao.memo_delete(idx);
 
 	}
 

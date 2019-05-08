@@ -44,6 +44,18 @@ public class MemoController {
 		return mav; // 출력 페이지로 이동
 	}
 	
+	@RequestMapping("update/{idx}")
+	public String update(@PathVariable int idx, MemoDTO dto) {
+		memoService.update(dto);
+		return "redirect:/memo/list.do";
+	}
+	
+	@RequestMapping("delete/{idx}")
+	public String delete(@PathVariable int idx) {
+		memoService.delete(idx);
+		return "redirect:/memo/list.do";
+	}
+	
 }
 
 
