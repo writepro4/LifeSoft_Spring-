@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.spring02.service.shop.ProductService;
 
 @Controller
-@RequestMapping("/shop/product/*") //공통적인 url mapping
+@RequestMapping("/shop/product/*") //공통적인 url mapping RequestMapping이 컨트롤러 밑에 있으면 공통적인 url mapping?
 public class ProductController {
 	
 	@Inject //의존관계 주입(DI)
-	ProductService productService;
+	ProductService productService; //스프링에서 만든 서비스 객체를 연결시킴
 	
 	@RequestMapping("list.do") // 세부적인 url mapping
 	public ModelAndView list(ModelAndView mav) {

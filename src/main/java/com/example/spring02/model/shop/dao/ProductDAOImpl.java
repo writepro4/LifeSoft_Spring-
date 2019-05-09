@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.example.spring02.model.ship.dto.ProductDTO;
+import com.example.spring02.model.shop.dto.ProductDTO;
 
 
 @Repository
@@ -15,7 +15,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	
 	@Inject
-	SqlSession sqlSession;
+	SqlSession sqlSession;  
 	
 	@Override
 	public List<ProductDTO> listProduct() {

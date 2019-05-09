@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.example.spring02.model.ship.dto.ProductDTO;
 import com.example.spring02.model.shop.dao.ProductDAO;
+import com.example.spring02.model.shop.dto.ProductDTO;
 
 @Service
 public class ProductServiceImpl implements ProductService {

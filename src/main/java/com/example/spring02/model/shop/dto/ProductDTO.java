@@ -1,4 +1,4 @@
-package com.example.spring02.model.ship.dto;
+package com.example.spring02.model.shop.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,6 +9,7 @@ public class ProductDTO {
 	private String description;
 	private String picture_url;
 	private MultipartFile file1;
+	
 	public int getProduct_id() {
 		return product_id;
 	}
